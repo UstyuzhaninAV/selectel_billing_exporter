@@ -143,21 +143,21 @@ func recordMetrics() {
 		gauge["selectel_billing_vpc_voice"].Set(float64(s.Data.Vpc.Voice))
 		gauge["selectel_billing_vpc_sum"].Set(float64(s.Data.Vpc.Sum))
 		gauge["selectel_billing_vpc_balance"].Set(float64(s.Data.Vpc.Balance))
-		gauge["selectel_billing_vpc_debt"].Set(float64(s.Data.Vpc.Debt))
+//		gauge["selectel_billing_vpc_debt"].Set(float64(s.Data.Vpc.Debt))
 
 		// storage
 		gauge["selectel_billing_storage_bonus"].Set(float64(s.Data.Storage.Bonus))
 		gauge["selectel_billing_storage_voice"].Set(float64(s.Data.Storage.Voice))
 		gauge["selectel_billing_storage_sum"].Set(float64(s.Data.Storage.Sum))
 		gauge["selectel_billing_storage_balance"].Set(float64(s.Data.Storage.Balance))
-		gauge["selectel_billing_storage_debt"].Set(float64(s.Data.Storage.Debt))
+//		gauge["selectel_billing_storage_debt"].Set(float64(s.Data.Storage.Debt))
 
 		// vmware
 		gauge["selectel_billing_vmware_bonus"].Set(float64(s.Data.Vmware.Bonus))
 		gauge["selectel_billing_vmware_voice"].Set(float64(s.Data.Vmware.Voice))
 		gauge["selectel_billing_vmware_sum"].Set(float64(s.Data.Vmware.Sum))
 		gauge["selectel_billing_vmware_balance"].Set(float64(s.Data.Vmware.Balance))
-		gauge["selectel_billing_vmware_debt"].Set(float64(s.Data.Vmware.Debt))
+//		gauge["selectel_billing_vmware_debt"].Set(float64(s.Data.Vmware.Debt))
 
 		time.Sleep(time.Hour * 1)
 	}
@@ -166,7 +166,7 @@ func recordMetrics() {
 func getSelectelBilling(selectelMetrics *selectelBillingResponce) error {
 	client := &http.Client{}
 
-	req, err := http.NewRequest("GET", "https://my.selectel.ru/api/v2/billing/balance", nil)
+	req, err := http.NewRequest("GET", "https://my.selectel.ru/api/v3/billing/balance", nil)
 	if err != nil {
 		return err
 	}

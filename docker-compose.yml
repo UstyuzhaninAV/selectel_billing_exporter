@@ -1,12 +1,11 @@
 version: '3'
 
 services:
-  selectel_billing_exporter:
-    container_name: selectel_billing_exporter
-    build: .
-    image: mxssl/selectel_billing_exporter:0.0.1
+  selectel_exporter:
+    image: ustiuzhanin/selectel_billing_exporter
+    container_name: selectel_exporter
+    restart: unless-stopped
     ports:
-      - "6789:80"
-    restart: always
+      - "6789:5680"
     environment:
-      TOKEN: селектел_api_токен
+      TOKEN: ZKdqcDNQb8VE63cB9gv73U8Z6_40743

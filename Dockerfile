@@ -2,7 +2,7 @@ FROM golang:1.13.5-alpine3.10 as builder
 
 ENV GO111MODULE=on
 
-WORKDIR /go/src/github.com/mxssl/selectel_billing_exporter
+WORKDIR /go/src/github.com/ustiuzhanin/selectel_billing_exporter
 COPY . .
 
 # install external depends
@@ -20,6 +20,6 @@ FROM alpine:3.11.0
 WORKDIR /
 RUN apk add --no-cache \
   ca-certificates
-COPY --from=builder /go/src/github.com/mxssl/selectel_billing_exporter .
+COPY --from=builder /go/src/github.com/ustiuzhanin/selectel_billing_exporter .
 RUN chmod +x app
 CMD ["./app"]

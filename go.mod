@@ -1,4 +1,4 @@
-module github.com/mxssl/selectel_billing_exporter
+module github.com/ustiuzhanin/selectel_billing_exporter
 
 require (
 	github.com/beorn7/perks v0.0.0-20180321164747-3a771d992973 // indirect

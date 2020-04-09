@@ -6,6 +6,6 @@ services:
     container_name: selectel_exporter
     restart: unless-stopped
     ports:
-      - "6789:5680"
+      - "6789:80"
     environment:
-      TOKEN: ZKdqcDNQb8VE63cB9gv73U8Z6_40743
+      TOKEN: token
